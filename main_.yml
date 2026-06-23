@@ -1,0 +1,32 @@
+name: Run All scripts
+
+on:
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for trigger'
+        required: false
+
+permissions:
+  contents: read     # Standard read permission is usually enough here
+  actions: write     # Needed if you manage B's own workflows, but not strictly needed to trigger A's
+  statuses: write
+
+jobs:
+  python-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Trigger Remote Workflow with gh
+        env:
+          # The GH CLI automatically looks for GH_TOKEN or GITHUB_TOKEN
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          gh workflow run bitbucket_sreebitbucket19.yml --repo aqwertyuiop48/leetcode_programming --ref main
