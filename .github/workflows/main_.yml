@@ -39,3 +39,22 @@ jobs:
           gh workflow run trigger_repos1.yml --repo aqwertyuiop48/leetcode_programming --ref main
           gh workflow run render_.yml --repo aqwertyuiop48/leetcode_programming --ref main
           gh workflow run render_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
+
+          gh workflow run main.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run trigger-all.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_1.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_2.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_3.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_4.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_5.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_6.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab-cnn-chunks-9-10_7.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_Lead_Scoring_ALL_IN_ONE_COLAB.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_gesture_recognition_1_2_3.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_gesture_recognition_4_5.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_gesture_recognition_6_7_8.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_gesture_recognition_9_10.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_skin_cancer_detection_melanoma.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          gh workflow run gcolab_working-with-chest-xray-images.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+          
