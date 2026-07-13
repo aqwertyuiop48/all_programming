@@ -29,18 +29,18 @@ jobs:
           # The GH CLI automatically looks for GH_TOKEN or GITHUB_TOKEN
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
-          gh workflow run trigger-branches.yml --repo aqwertyuiop48/vercel_docker_programming --ref main
+          # gh workflow run trigger-branches.yml --repo aqwertyuiop48/vercel_docker_programming --ref main
 
-          gh workflow run bitbucket_sreebitbucket19.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run gitlab_sreegithub19.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run trigger_gitforcode_debug.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run vercel_repos.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run vercel_repos_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run vercel_repos_2.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run trigger_repos.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run trigger_repos1.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run render_.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run render_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run bitbucket_sreebitbucket19.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run gitlab_sreegithub19.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run trigger_gitforcode_debug.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run vercel_repos.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run vercel_repos_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run vercel_repos_2.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run trigger_repos.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run trigger_repos1.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run render_.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          # gh workflow run render_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
 
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "main.yml"
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "trigger-all.yml"
