@@ -41,55 +41,69 @@ jobs:
         run: |
           gh workflow run trigger-branches.yml --repo aqwertyuiop48/vercel_docker_programming --ref main
 
-  # --- SECOND SUB-JOB ---
+
+# --- SECOND SUB-JOB ---
   leetcode-job:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.job_to_run == 'all' || github.event.inputs.job_to_run == 'leetcode' }}
+    strategy:
+      max-parallel: 1 # <-- Forces sequential execution, running one at a time
+      matrix:
+        workflow: [
+          "bitbucket_sreebitbucket19.yml",
+          "gitlab_sreegithub19.yml",
+          "trigger_gitforcode_debug.yml",
+          "vercel_repos.yml",
+          "vercel_repos_1.yml",
+          "vercel_repos_2.yml",
+          "trigger_repos.yml",
+          "trigger_repos1.yml",
+          "render_.yml",
+          "render_1.yml"
+        ]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Trigger LeetCode Workflows
+      - name: Trigger LeetCode Workflows Sequentially
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
-          gh workflow run bitbucket_sreebitbucket19.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run gitlab_sreegithub19.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run trigger_gitforcode_debug.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run vercel_repos.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run vercel_repos_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run vercel_repos_2.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run trigger_repos.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run trigger_repos1.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run render_.yml --repo aqwertyuiop48/leetcode_programming --ref main
-          gh workflow run render_1.yml --repo aqwertyuiop48/leetcode_programming --ref main
+          gh workflow run "${{ matrix.workflow }}" --repo aqwertyuiop48/leetcode_programming --ref main
+
 
   # --- THIRD SUB-JOB ---
   upgrad-job:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.job_to_run == 'all' || github.event.inputs.job_to_run == 'upgrad' }}
+    strategy:
+      max-parallel: 1 # <-- Forces sequential execution, NO parallel runs
+      matrix:
+        workflow: [
+          "main.yml",
+          "trigger-all.yml",
+          "gcolab-cnn-chunks-9-10.yml",
+          "gcolab-cnn-chunks-9-10_1.yml",
+          "gcolab-cnn-chunks-9-10_2.yml",
+          "gcolab-cnn-chunks-9-10_3.yml",
+          "gcolab-cnn-chunks-9-10_4.yml",
+          "gcolab-cnn-chunks-9-10_5.yml",
+          "gcolab-cnn-chunks-9-10_6.yml",
+          "gcolab-cnn-chunks-9-10_7.yml",
+          "gcolab_Lead_Scoring_ALL_IN_ONE_COLAB.yml",
+          "gcolab_gesture_recognition_1_2_3.yml",
+          "gcolab_gesture_recognition_4_5.yml",
+          "gcolab_gesture_recognition_6_7_8.yml",
+          "gcolab_gesture_recognition_9_10.yml",
+          "gcolab_skin_cancer_detection_melanoma.yml",
+          "gcolab_working-with-chest-xray-images.yml"
+        ]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Trigger UpGrad Workflows
+      - name: Trigger UpGrad Workflows Sequentially
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "main.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "trigger-all.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_1.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_2.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_3.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_4.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_5.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_6.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_7.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_Lead_Scoring_ALL_IN_ONE_COLAB.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_1_2_3.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_4_5.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_6_7_8.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_9_10.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_skin_cancer_detection_melanoma.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_working-with-chest-xray-images.yml"
+          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "${{ matrix.workflow }}"
