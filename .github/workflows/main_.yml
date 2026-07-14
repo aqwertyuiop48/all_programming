@@ -88,7 +88,7 @@ jobs:
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab-cnn-chunks-9-10_7.yml"
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_Lead_Scoring_ALL_IN_ONE_COLAB.yml"
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_1_2_3.yml"
-          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_4_5_6.yml"
+          gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_4_5.yml"
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_6_7_8.yml"
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_gesture_recognition_9_10.yml"
           gh workflow run --repo aqwertyuiop48/upgrad_programming_1 --ref main1 "gcolab_skin_cancer_detection_melanoma.yml"
