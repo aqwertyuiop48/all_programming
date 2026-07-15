@@ -10,10 +10,9 @@ on:
       job_to_run:
         description: 'Select which job configuration to execute'
         required: true
-        default: 'all'
+        default: 'vercel-docker'
         type: choice
         options:
-          - all
           - vercel-docker
           - leetcode
           - upgrad
