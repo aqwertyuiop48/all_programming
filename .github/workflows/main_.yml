@@ -45,21 +45,6 @@ jobs:
   leetcode-job:
     runs-on: ubuntu-latest
     if: ${{ github.event.inputs.job_to_run == 'leetcode' }}
-    strategy:
-      max-parallel: 1 # <-- Forces sequential execution, running one at a time
-      matrix:
-        workflow: [
-          "bitbucket_sreebitbucket19.yml",
-          "gitlab_sreegithub19.yml",
-          "trigger_gitforcode_debug.yml",
-          "vercel_repos.yml",
-          "vercel_repos_1.yml",
-          "vercel_repos_2.yml",
-          "trigger_repos.yml",
-          "trigger_repos1.yml",
-          "render_.yml",
-          "render_1.yml"
-        ]
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -68,7 +53,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
         run: |
-          gh workflow run "${{ matrix.workflow }}" --repo aqwertyuiop48/leetcode_programming --ref main
+          gh workflow run bitbucket_sreebitbucket19.yml --repo aqwertyuiop48/leetcode_programming --ref main
 
 
   # --- THIRD SUB-JOB ---
