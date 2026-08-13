@@ -16,6 +16,7 @@ on:
           - vercel-docker
           - leetcode
           - upgrad
+          - bits
       reason:
         description: 'Reason for trigger'
         required: false
@@ -70,3 +71,19 @@ jobs:
         run: |
           # Only trigger the FIRST file. The cascade (workflow_run) will handle the rest.
           gh workflow run main.yml --repo aqwertyuiop48/upgrad_programming_1 --ref main1
+
+
+  # --- FOURTH SUB-JOB ---
+  bits-job:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.job_to_run == 'bits' }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Trigger First BITS Domino
+        env:
+          GH_TOKEN: ${{ secrets.TRIGGER_PAT_AQWERTYUIOP48 }}
+        run: |
+          # Only trigger the FIRST file. The cascade (workflow_run) will handle the rest.
+          gh workflow run model-engineering.yml --repo aqwertyuiop48/BITS_programming --ref main
