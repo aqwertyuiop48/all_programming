@@ -87,3 +87,6 @@ jobs:
         run: |
           # Only trigger the FIRST file. The cascade (workflow_run) will handle the rest.
           gh workflow run model-engineering.yml --repo aqwertyuiop48/BITS_programming --ref main
+          gh workflow run ci.yml --repo aqwertyuiop48/BITS_programming --ref main
+          gh workflow run gemini_engineering.yml --repo aqwertyuiop48/BITS_programming --ref main
+          gh workflow run gemini_engineering_1.yml --repo aqwertyuiop48/BITS_programming --ref main
