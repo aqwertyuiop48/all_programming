@@ -90,3 +90,4 @@ jobs:
           gh workflow run ci.yml --repo aqwertyuiop48/BITS_programming --ref main
           gh workflow run gemini_engineering.yml --repo aqwertyuiop48/BITS_programming --ref main
           gh workflow run gemini_engineering_1.yml --repo aqwertyuiop48/BITS_programming --ref main
+          gh workflow run aws_.yml --repo aqwertyuiop48/BITS_programming --ref main
